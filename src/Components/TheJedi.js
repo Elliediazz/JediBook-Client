@@ -24,7 +24,7 @@ function TheJedi(){
     )
   })
     return(
-     <div>
+     <div className='jediBackground'>
       {display}
      </div>
     )
