@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.aboutBackground {
+  background-image: "https://cdn.shapechef.com/blog/stars.png";
+}
