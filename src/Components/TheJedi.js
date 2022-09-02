@@ -25,7 +25,7 @@ function TheJedi(){
   })
     return(
      <div>
-        {display}
+      {display}
      </div>
     )
  }

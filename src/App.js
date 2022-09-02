@@ -12,9 +12,11 @@ import SingUp from './Components/SignUp'
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Router>
-      <NavBar />
+        <header>
+          <NavBar/>
+        </header>
       <Routes>
         <Route exact path= '/' element={<Home />} />
         <Route path= '/new' element={<NewAvatarForm />}/>

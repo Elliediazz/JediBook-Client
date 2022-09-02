@@ -25,7 +25,7 @@ function TheSith(){
   })
     return(
      <div>
-        {display}
+      {display}
      </div>
     )
  }

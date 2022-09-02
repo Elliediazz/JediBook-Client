@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
-
+import react from 'react'
+import '../Styling/Components.css'
 
 function Home(){ 
 
    return(
-    <div>
-      In a Galaxy Far Far Away ...
+    <div className='homepagebackground'>
+      <h1 className='intro'>In a Galaxy Far Far Away ...</h1>
     </div>
    )
 }

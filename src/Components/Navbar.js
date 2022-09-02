@@ -1,34 +1,44 @@
-import '../'
+import React from 'react';
+import '../Styling/Components.css'
 
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import { Container } from 'react-bootstrap'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom'
+import Button from "react-bootstrap/Button";
 
 
 
-function NavBar(props) {
+function NavBar() {
     return(
-        <Navbar className='navbar1'>
-            <Container>
-                <Navbar.Brand href="https://swapi.dev/api/" target="_blank">
+        <div className='Navbar1'>
+        <Navbar >
+            <Container >
+                {/* <Navbar.Brand className='logo' href="https://swapi.dev/" target="_blank">
                     <img 
                         src = "https://www.xtrafondos.com/wallpapers/resized/star-wars-logo-3654.jpg?s=large"
                         alt= "Starwars Logo"
-                        width= "100px"
+                        width= "50px"
                     ></img>
-                </Navbar.Brand>
-                <Nav className="navbar navbar-default">
-                <Link to={'/'}>Home</Link>
-                <Link to={'/new'}>New Avatar</Link>
-                <Link to={'/about'}>About Me</Link>
-                <Link to={'/jedi'}>The Jedi</Link>
-                <Link to={'/sith'}>The Sith</Link>
-                <Link to={'/login'}>Log In</Link>
-                <Link to={'/signup'}>Sign Up</Link>
+                </Navbar.Brand> */}
+                <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className='spacing'>
+                    <div className='button'>
+                     <Link className='spacing' to={'/'}>Home</Link>
+                     <Link className='spacing' to={'/about'}>About Me</Link>
+                     <Link className='spacing' to={'/jedi'}>The Jedi</Link>
+                     <Link className='spacing' to={'/sith'}>The Sith</Link>
+                     <Link className='spacing' to={'/new'}>New Avatar Form</Link>
+                    </div>
+                    <div className='login'>
+                     <Link className='spacing' to={'/login'}>Log In</Link>
+                     <Link className='spacing' to={'/signup'}>Sign Up</Link>
+                    </div>
                 </Nav>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
+        </div>
     )
 }
 
