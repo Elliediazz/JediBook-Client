@@ -24,7 +24,7 @@ function TheSith(){
     )
   })
     return(
-     <div>
+     <div className='sithBackground'>
       {display}
      </div>
     )

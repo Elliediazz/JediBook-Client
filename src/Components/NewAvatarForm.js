@@ -1,11 +1,57 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
+const INIT_STATE = {
+  name:'',
+  height:'',
+  mass:'',
+  hairColor:'',
+  eyeColor:'',
+  birthYear:'',
+  gender:'',
+  homeworld:'',
+  species:''
+}
 
 function NewAvatarForm(){ 
-    return(
-     <div>
-       New Avatar Form!
-     </div>
+  const [data, setData] = useState(INIT_STATE)
+  const navigate = useNavigate
+
+  const handleChange = (e) => {
+      setData({...data, [e.target.name]: e.target.value })
+  }
+    
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    data.age = Number(data.age)
+
+    const response = await fetch('http://localhost:8080/avatar', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type':  'application/json'
+      },
+      body: JSON.stringify(data)
+      })
+      if (response.status !== 201) {
+        // handle error here
+      } else {
+        navigate('/', {replace: true })
+      }
+  }
+  return(
+    <form onSubmit={handleSubmit}>
+      <input onChange={handleChange} required name="name" placeholder="Name" value={data.name}/>
+      <input onChange={handleChange} name="height" type="number" placeholder="Height" value={data.height}/>
+      <input onChange={handleChange} name="mass" type="number" placeholder="Mass" value={data.mass}/>
+      <input onChange={handleChange} name="haircolor" placeholder="Hair Color" value={data.hairColor}/>
+      <input onChange={handleChange} name="eyecolor" placeholder="Eye Color" value={data.eyeColor}/>
+      <input onChange={handleChange} required name="birthYear" type="number" placeholder="Birth Year" value={data.birthYear}/>
+      <input onChange={handleChange} name="gender" placeholder="gender" value={data.gender}/>
+      <input onChange={handleChange} required name="homeworld" placeholder="Home World" value={data.homeworld}/>
+      <input onChange={handleChange} required name="species" placeholder="species" value={data.species}/>
+      <button type="Submit">Submit</button>
+    </form>
     )
- }
- 
+}
  export default NewAvatarForm
