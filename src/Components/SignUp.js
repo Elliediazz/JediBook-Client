@@ -1,5 +1,4 @@
 
-
 function SignUp(){ 
     return(
      <div>
@@ -8,4 +7,4 @@ function SignUp(){
     )
  }
  
- export default SignUp
+export default SignUp

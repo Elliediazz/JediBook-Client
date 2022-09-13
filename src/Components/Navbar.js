@@ -28,6 +28,7 @@ function NavBar() {
                      <Link className='spacing' to={'/jedi'}>The Jedi</Link>
                      <Link className='spacing' to={'/sith'}>The Sith</Link>
                      <Link className='spacing' to={'/new'}>New Avatar Form</Link>
+                     <Link className='spacing' to={'/myavatars'}>My Avatars</Link>
                     </div>
                     <div className='login'>
                      <Link className='spacing' to={'/login'}>Log In</Link>
